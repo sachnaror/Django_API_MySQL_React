@@ -1,12 +1,10 @@
+
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
 
-def env_var(name):
-    try:
-        return str(os.environ[name])
-    except:
-        raise KeyError
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,6 +25,17 @@ ALLOWED_HOSTS = []
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+def env_var(name):
+    try:
+        return str(os.environ[name])
+    except:
+        raise KeyError
+
+        # Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -37,7 +46,6 @@ DATABASES = {
         'PORT': ''
     }
 }
-
 # Application definition
 
 INSTALLED_APPS = [
