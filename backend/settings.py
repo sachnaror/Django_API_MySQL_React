@@ -133,3 +133,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
 ]
+
+
+# https://medium.com/@sostomc011/https-medium-com-sostomc011-getting-started-with-django-mysql-and-react-js-backend-b962a7691486
