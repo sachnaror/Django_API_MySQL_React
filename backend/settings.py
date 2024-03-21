@@ -4,6 +4,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
 
@@ -29,8 +30,8 @@ ALLOWED_HOSTS = []
 def env_var(name):
     try:
         return str(os.environ[name])
-    except:
-        raise KeyError
+    except KeyError:
+        raise KeyError(f"Environment variable {name} not found")
 
         # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -40,10 +41,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'employees',
-        'USER': 'root',
+        'USER': 'rooter',
         'PASSWORD': env_var('DB_PASS'),
+        # 'PASSWORD': '',
         'HOST': '127.0.0.1',
-        'PORT': ''
+        'PORT': '3306'
     }
 }
 # Application definition
