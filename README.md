@@ -1,6 +1,6 @@
 # Django_CRUD
 
-Backend Development with MySQL, DjangoRestFramework that can be integrated with any frontend. We are creating a simple system that exposes database data an API that we create using DRF.
+Backend Development with MySQL, DjangoRestFramework that can be integrated with any frontend. This one is a simple system that exposes database data an API that we create using DRF (completed it in flat 1 hour).
 
 
 
