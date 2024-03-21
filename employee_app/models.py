@@ -18,8 +18,11 @@ class Departments(models.Model):
 
 
 class DeptEmp(models.Model):
-    emp_no = models.OneToOneField('Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)  # The composite primary key (emp_no, dept_no) found, that is not supported. The first column is selected.
-    dept_no = models.ForeignKey(Departments, models.DO_NOTHING, db_column='dept_no')
+    # The composite primary key (emp_no, dept_no) found, that is not supported. The first column is selected.
+    emp_no = models.OneToOneField(
+        'Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)
+    dept_no = models.ForeignKey(
+        Departments, models.DO_NOTHING, db_column='dept_no')
     from_date = models.DateField()
     to_date = models.DateField()
 
@@ -30,8 +33,11 @@ class DeptEmp(models.Model):
 
 
 class DeptManager(models.Model):
-    emp_no = models.OneToOneField('Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)  # The composite primary key (emp_no, dept_no) found, that is not supported. The first column is selected.
-    dept_no = models.ForeignKey(Departments, models.DO_NOTHING, db_column='dept_no')
+    # The composite primary key (emp_no, dept_no) found, that is not supported. The first column is selected.
+    emp_no = models.OneToOneField(
+        'Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)
+    dept_no = models.ForeignKey(
+        Departments, models.DO_NOTHING, db_column='dept_no')
     from_date = models.DateField()
     to_date = models.DateField()
 
@@ -55,7 +61,9 @@ class Employees(models.Model):
 
 
 class Salaries(models.Model):
-    emp_no = models.OneToOneField(Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)  # The composite primary key (emp_no, from_date) found, that is not supported. The first column is selected.
+    # The composite primary key (emp_no, from_date) found, that is not supported. The first column is selected.
+    emp_no = models.OneToOneField(
+        Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
     salary = models.IntegerField()
     from_date = models.DateField()
     to_date = models.DateField()
@@ -67,7 +75,9 @@ class Salaries(models.Model):
 
 
 class Titles(models.Model):
-    emp_no = models.OneToOneField(Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)  # The composite primary key (emp_no, title, from_date) found, that is not supported. The first column is selected.
+    # The composite primary key (emp_no, title, from_date) found, that is not supported. The first column is selected.
+    emp_no = models.OneToOneField(
+        Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
     title = models.CharField(max_length=50)
     from_date = models.DateField()
     to_date = models.DateField(blank=True, null=True)
