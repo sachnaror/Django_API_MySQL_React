@@ -33,9 +33,6 @@ def env_var(name):
     except KeyError:
         raise KeyError(f"Environment variable {name} not found")
 
-        # Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 
 DATABASES = {
     'default': {
